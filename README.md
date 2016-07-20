@@ -29,4 +29,4 @@ Open browser and check url http://<ip_where_container_started>:9000
 
 ___
 Get docker image
-docker pull isemin/sentry
+`docker pull isemin/sentry`
