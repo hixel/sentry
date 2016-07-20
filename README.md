@@ -1,5 +1,5 @@
 # Sentry server configuration deployment 
-[docker] Sentry server installation
+### [docker] Sentry server installation
 
 Guide installation
 https://docs.getsentry.com/on-premise/server/installation/docker/
@@ -25,6 +25,8 @@ https://docs.getsentry.com/on-premise/server/installation/docker/
 * And run
 `docker run -d --name sentry-web-01 -p 9000:9000 --link sentry-redis:redis --link sentry-postgres:postgres --link sentry-smtp:smtp --env SENTRY_SECRET_KEY="<secret_key_from_5_step>" <docker_username>/sentry run web`
 
-___
-
 Open browser and check url http://<ip_where_container_started>:9000
+
+___
+Get docker image
+docker pull isemin/sentry
