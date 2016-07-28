@@ -22,8 +22,11 @@ https://docs.getsentry.com/on-premise/server/installation/docker/
 * Upgrade for db init
 `docker run --rm -it --link sentry-redis:redis --link sentry-postgres:postgres --link sentry-smtp:smtp --env SENTRY_SECRET_KEY="<secret_key_from_5_step>" <docker_username>/sentry upgrade`
 
-* And run
+* Run web host
 `docker run -d --name sentry-web-01 -p 9000:9000 --link sentry-redis:redis --link sentry-postgres:postgres --link sentry-smtp:smtp --env SENTRY_SECRET_KEY="<secret_key_from_5_step>" <docker_username>/sentry run web`
+
+* Run capture worker
+`docker run -d --name sentry-worker-01 ---link sentry-redis:redis --link sentry-postgres:postgres --link sentry-smtp:smtp --env SENTRY_SECRET_KEY="<secret_key_from_5_step>" <docker_username>/sentry run worker`
 
 Open browser and check url http://<ip_where_container_started>:9000
 
